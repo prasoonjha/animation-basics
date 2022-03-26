@@ -2,13 +2,18 @@
   "name": "animation-basics",
   "version": "1.0.0",
   "main": "node_modules/expo/AppEntry.js",
+  "eslintConfig": {
+    "extends": "universe/native"
+  },
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
     "eject": "expo eject",
-    "test": "jest --watchAll"
+    "test": "jest --watchAll",
+    "lint": "eslint . --ext .ts,.tsx,.js,.jsx,.json",
+    "lint-and-fix": "eslint . --ext .ts,.tsx,.js,.jsx,.json --fix"
   },
   "jest": {
     "preset": "jest-expo"
@@ -18,6 +23,8 @@
     "@react-navigation/bottom-tabs": "^6.0.5",
     "@react-navigation/native": "^6.0.2",
     "@react-navigation/native-stack": "^6.1.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
     "expo": "~44.0.0",
     "expo-asset": "~8.4.4",
     "expo-constants": "~13.0.0",
@@ -37,8 +44,13 @@
     "@babel/core": "^7.12.9",
     "@types/react": "~17.0.21",
     "@types/react-native": "~0.64.12",
-    "jest-expo": "~44.0.1",
+    "@typescript-eslint/eslint-plugin": "^5.16.0",
+    "@typescript-eslint/parser": "^5.16.0",
+    "eslint": "^8.12.0",
+    "eslint-config-universe": "^10.0.0",
     "jest": "^26.6.3",
+    "jest-expo": "~44.0.1",
+    "prettier": "^2.6.1",
     "react-test-renderer": "17.0.1",
     "typescript": "~4.3.5"
   },
