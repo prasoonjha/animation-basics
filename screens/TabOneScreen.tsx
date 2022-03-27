@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import { StyleSheet } from 'react-native';
-import { Animated, Text, View, PanResponder } from 'react-native';
+import { Animated, View, PanResponder } from 'react-native';
 import { RootTabScreenProps } from '../types';
 
 const styles = StyleSheet.create({
@@ -57,10 +57,13 @@ export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'
         ),
       ]).start();
     },
-    onPanResponderMove: Animated.event([null, { dx: position.x, dy: position.y }], {
-      useNativeDriver: false,
-    }),
+    onPanResponderMove: Animated.event(
+      [null, { dx: position.x, dy: position.y }],
+      {
+        useNativeDriver: false,
+      }),
   });
+
   return (
     <View style={styles.container}>
       <Animated.View
